@@ -1,2 +1,7 @@
 node_modules
 .cache
+maps/dist
+.gitignore
+maps/dist/src.f10117fe.js
+maps/dist/index.js
+maps/dist/src.f10117fe.js.map
