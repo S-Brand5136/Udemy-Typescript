@@ -117,76 +117,9 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"src/models/User.ts":[function(require,module,exports) {
-"use strict";
+})({"src/index.ts":[function(require,module,exports) {
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.User = void 0;
-
-var User =
-/** @class */
-function () {
-  function User(data) {
-    this.data = data;
-    this.events = {};
-  }
-
-  User.prototype.get = function (propName) {
-    return this.data[propName];
-  };
-
-  User.prototype.set = function (update) {
-    Object.assign(this.data, update);
-  };
-
-  User.prototype.on = function (eventName, callback) {
-    var handlers = this.events[eventName] || [];
-    handlers.push(callback);
-    this.events[eventName] = handlers;
-  };
-
-  User.prototype.trigger = function (eventName) {
-    var handlers = this.events[eventName];
-
-    if (!handlers || handlers.length === 0) {
-      return;
-    }
-
-    handlers.forEach(function (callback) {
-      callback();
-    });
-  };
-
-  return User;
-}();
-
-exports.User = User;
-},{}],"src/index.ts":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var User_1 = require("./models/User");
-
-var user = new User_1.User({
-  name: "Myname",
-  age: 20
-});
-user.on("change", function () {
-  console.log("change 1");
-});
-user.on("change", function () {
-  console.log("change 2");
-});
-user.on("save", function () {
-  console.log("Save was triggered");
-});
-user.trigger("df");
-},{"./models/User":"src/models/User.ts"}],"../../../../home/brandon/.nvm/versions/node/v14.17.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{}],"../../../../home/brandon/.nvm/versions/node/v14.17.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -214,7 +147,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35873" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35351" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
